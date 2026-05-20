@@ -5,7 +5,12 @@
 
 body {
     background-image: linear-gradient(200deg, rgb(32, 243, 0), red, rgb(85, 0, 255));
-    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: fill;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -15,7 +20,8 @@ main {
     backdrop-filter: blur(2px);
     margin-top: 24vh;
     padding: 15px 5px 15px;
-    width: 700px;
+    width: 90%;
+    max-width: 700px;
     height: fit-content;
     border-radius: 20px;
     box-shadow: 4px 4px 8px;
@@ -31,7 +37,6 @@ h2 {
     text-align: center;
     text-decoration: underline;
 }
-
 
 #inputSection {
     margin: auto !important;
@@ -105,4 +110,34 @@ span {
 .spanEd:hover {
     background-color: rgba(0, 132, 255, 0.404);
     border-radius: 4px;
+}
+
+/* (max-width: 600px) → Screen is Opx to 600px → Styles are Active
+(min-width: 600px) → Screen is 600px to infinity → Styles are Active
+*/
+
+@media (max-width:420px) {
+    #inputSection {
+        width: 99%;
+    } 
+}
+
+@media (max-width:500px) {
+    #inputSection {
+        width: fit-content;
+    }
+
+    main {
+        width: 100%;
+        border-radius: 0;
+        padding: 0 0 15px;
+    }
+
+    #inputSection input {
+        width: 100%;
+    }
+
+    li {
+        border: 2px solid #000000;
+    }
 }
